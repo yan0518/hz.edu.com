@@ -34,7 +34,7 @@ Route::group([], function($router){
     $router->post('password/reset', 'Auth\ResetPasswordController@reset');
 });
 
-Route::group(['prefix' => 'students'], function($router){
+Route::group(['middleware' => ['web','auth'], 'prefix' => 'students'], function($router){
     Route::get('/', function(){
         return redirect('students/info');
     });

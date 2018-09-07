@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use App\Repositories\StudentsRepository;
 use App\Repositories\StudentsRepositoryEloquent;
 use App\Http\Requests\StudentsRequest;
@@ -33,9 +33,7 @@ class StudentsController extends Controller
 
     //save stu info
     public function new(StudentsRequest $request){
-        dump($request->all());
-
         // $this->students->create($request->all());
-        return "aa";
+        // return "aa";
     }
 }

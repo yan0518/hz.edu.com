@@ -163,8 +163,7 @@ return [
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
 
-
-        Packages\Toastr\ToastrServiceProvider::class,
+        Yuansir\Toastr\ToastrServiceProvider::class,
     ],
 
     /*
@@ -213,8 +212,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        'Toastr' => Packages\Toastr\Facades\Toastr::class,
+        'Toastr' => Yuansir\Toastr\Facades\Toastr::class,
 
     ],
 

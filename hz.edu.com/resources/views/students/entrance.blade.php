@@ -263,9 +263,6 @@
 @stop
 
 @section('js') 
-    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
     <script src="{{ asset('plugins/adminlte/js/app.min.js') }}"></script>
     <script src="{{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
@@ -274,6 +271,5 @@
             autoclose:true,
             format: 'yyyy-mm-dd'
         });
-        console.log("Hi")
     </script>
 @stop

@@ -42,10 +42,6 @@
 
 @yield('body')
 
-{!! Toastr::render() !!}
-<link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
-<script src="{{ asset('js/toastr.min.js') }}"></script>
-
 <script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
@@ -66,6 +62,9 @@
 @endif
 
 @yield('adminlte_js')
+
+{!! Toastr::render() !!}
+
 
 </body>
 </html>
