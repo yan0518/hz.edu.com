@@ -38,7 +38,7 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'students'], function(
     Route::get('/', function(){
         return redirect('students/info');
     });
-    $router->get('info', 'StudentsController@info')->name('students.info');
+    $router->get('info/{name?}', 'StudentsController@info')->name('students.info');
     $router->get('new', 'StudentsController@entrance');
     $router->get('class', 'StudentsController@class')->name('students.class');
 

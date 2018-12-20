@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Hz_Students extends Model
 {
     use Notifiable;
+    protected $table = 'hz_students';
 
     /**
      * The attributes that are mass assignable.

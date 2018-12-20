@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use App\Repositories\StudentsRepository;
 use App\Repositories\StudentsRepositoryEloquent;
 use App\Http\Requests\StudentsRequest;
+use Toastr;
 
 
 class StudentsController extends Controller
 {
     protected $students;
 
-    function __contruct(StudentsRepositoryEloquent $students){
-        parent::__construct();
+    function __construct(StudentsRepositoryEloquent $students){
         $this->students = $students;
 
     }
@@ -23,8 +23,14 @@ class StudentsController extends Controller
     	return view('students/entrance');
     }
 
-    public function info(){
-        return view('students/info');
+    public function info($name = ''){
+        if(!empty($name)){
+            $students = $this->students->findWhere(['name' => $name])->paginate(10);
+        }
+        else{
+            $students = $this->students->paginate(10);
+        }
+        return view('students/info', compact('students'));
     }
 
     public function class(){
@@ -44,7 +50,7 @@ class StudentsController extends Controller
         $request_data['perplex'] = isset($data['perplex'])?$data['perplex']:0;
         $request_data['way'] = isset($data['way'])?$data['way']:0;
 
-        $rst = $this->students->create($request_data);
+        $rst = $this->students->updateOrCreate(['name' => $data['name'], 'birthday' => $data['birth_date']], $request_data);
 
         if ($rst) {
             Toastr::success('录入成功!');
